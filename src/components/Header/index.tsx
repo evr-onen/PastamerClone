@@ -23,25 +23,41 @@ const Header = () => {
   useEffect(() => setMounted(true), [])
 
   return (
-    <Grid container className="evren" justifyContent="center" marginBottom="50px">
-      <Grid item xs={9}>
-        <Card>
-          <CardContent>
-            <Grid container spacing={5} justifyContent="space-between">
-              <Grid item></Grid>
-              <Grid item xs={4}>
-                <Grid container spacing={5} justifyContent="flex-end">
-                  <Grid item>
-                    <IconButton color="inherit" aria-label="themeBtn" onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
-                      {resolvedTheme === "light" ? <UIWeatherNight /> : <UIWeatherSunny />}
-                    </IconButton>
-                    <LangDropdown />
+    <Grid item width="100%">
+      <Grid container className="headerContainer">
+        <Grid item width="100%" className="topHeaderWrapper">
+          <Grid container className="insideWrapper" width="100%" maxWidth="1370px" justifyContent="center" mx="auto" sx={{ background: "lightGray" }}>
+            <Grid item width="100%" px="2rem">
+              <Grid container spacing={5} justifyContent="space-between">
+                <Grid item></Grid>
+                <Grid item></Grid>
+                <Grid item></Grid>
+                <Grid item xs={4}>
+                  <Grid container spacing={5} justifyContent="flex-end">
+                    <Grid item>
+                      <IconButton color="inherit" aria-label="themeBtn" onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}>
+                        {resolvedTheme === "light" ? <UIWeatherNight /> : <UIWeatherSunny />}
+                      </IconButton>
+                      <LangDropdown />
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
-          </CardContent>
-        </Card>
+          </Grid>
+        </Grid>
+        <Grid item xs={12}>
+          <Grid container className="insideWrapper" width="100%" maxWidth="1370px" justifyContent="center" mx="auto">
+            <Grid item xs={12} px="2rem">
+              <Grid container spacing={5} justifyContent="space-between">
+                <Grid item></Grid>
+                <Grid item></Grid>
+                <Grid item></Grid>
+                <Grid item xs={4}></Grid>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   )
