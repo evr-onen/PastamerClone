@@ -4,6 +4,7 @@ import Axios from "axios"
 import Router from "next/router"
 import jwt_decode from "jwt-decode"
 import { DecodedType } from "@/types/response"
+
 // ** Types
 type UserType = { name: string; surname: string; userRole: number; storeId: number; token: null | string }
 interface IGlobalContextProps {
@@ -24,10 +25,11 @@ export const GlobalContext = React.createContext<IGlobalContextProps>({
   setUser: () => {},
   setSettings: () => {},
 })
-
+let storage = ""
 export const GlobalContextProvider = (props: any) => {
-  const [themeSettings, setthemeSettings] = useState({ mode: "light", lang: "tr", direction: "ltr" })
   const [currentUser, setCurrentUser] = useState<UserType>({ name: "", surname: "", userRole: 0, storeId: 0, token: null })
+
+  const [themeSettings, setthemeSettings] = useState({ mode: storage, lang: "tr", direction: "ltr" })
 
   useEffect(() => {
     if (currentUser.token === null) {

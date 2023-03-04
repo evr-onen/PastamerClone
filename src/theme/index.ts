@@ -7,13 +7,15 @@ declare module "@mui/material/styles" {
 
   interface Palette {
     customColors?: {
-      face: React.CSSProperties["color"]
+      green100: React.CSSProperties["color"]
+      green200: React.CSSProperties["color"]
     }
   }
 
   interface PaletteOptions {
     customColors?: {
-      face: React.CSSProperties["color"]
+      green100: React.CSSProperties["color"]
+      green200: React.CSSProperties["color"]
     }
   }
 
@@ -27,7 +29,8 @@ declare module "@mui/material/styles" {
 
   interface ThemeOptions {
     customColors?: {
-      face: React.CSSProperties["color"]
+      green100: React.CSSProperties["color"]
+      green200: React.CSSProperties["color"]
     }
   }
 }
@@ -38,29 +41,30 @@ import { Theme } from "@mui/material/styles"
 export const DEFAULT_THEME: AllowedTheme = "light"
 
 // ** Vars
-import { deepPurple } from "@mui/material/colors"
+import { deepPurple, green, grey, brown } from "@mui/material/colors"
 
 export let lightTheme: Theme = createTheme({
   palette: {
     mode: "light",
 
     customColors: {
-      face: deepPurple[400],
+      green100: green[100],
+      green200: green[200],
     },
 
     primary: {
-      main: deepPurple[400],
+      main: brown[600],
     },
     secondary: {
-      main: deepPurple[100],
+      main: brown[400],
     },
     background: {
-      default: deepPurple[50],
-      paper: deepPurple[100],
+      default: grey[50],
+      paper: green[50],
     },
     text: {
-      primary: deepPurple[600],
-      secondary: deepPurple[300],
+      primary: grey[800],
+      secondary: grey[700],
       disabled: "rgba(94,53,177,0.36)",
     },
     divider: "rgba(224,190,190,0.18)",
